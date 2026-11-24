@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 The fvlint Authors
+# SPDX-License-Identifier: ISC
+#
+# fvlint waivers: <check-id glob>  # reason
+fsm_unreachable:u_framer.st=*   # S_ERR is a defensive state kept on purpose

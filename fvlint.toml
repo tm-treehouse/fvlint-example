@@ -1,0 +1,11 @@
+# fvlint project file: `fvlint --config fvlint.toml` runs every configuration
+# below, each into fvlint_out/NAME.  Paths are relative to this file.  Keys:
+# https://github.com/tm-treehouse/fvlint#project-files
+out = "fvlint_out"
+
+[config.demo]
+top = "demo_top"
+files = ["rtl/demo_top.sv"]
+frontend = "slang"                    # SystemVerilog: package, enum, .* ports
+assume = "fvlint/assumptions.sv"      # what the design may assume about its inputs
+waivers = "fvlint/waivers.txt"        # findings that are intentional

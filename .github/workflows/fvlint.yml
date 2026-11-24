@@ -1,0 +1,11 @@
+# Formal lint on every push and pull request.  The action installs the OSS CAD
+# Suite and fvlint, runs every configuration in fvlint.toml, puts findings on
+# the RTL lines they are about, writes a job summary and uploads the results.
+name: fvlint
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  fvlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: tm-treehouse/fvlint@v0.4.0
