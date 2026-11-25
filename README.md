@@ -17,7 +17,7 @@ Everything fvlint needs is in four files:
 | [`fvlint.toml`](fvlint.toml) | The project file: top module, sources, frontend, assumptions, waivers |
 | [`fvlint/assumptions.sv`](fvlint/assumptions.sv) | What the design may assume about its inputs |
 | [`fvlint/waivers.txt`](fvlint/waivers.txt) | Findings that are intentional |
-| [`.github/workflows/fvlint.yml`](.github/workflows/fvlint.yml) | The CI job: checkout, then `uses: tm-treehouse/fvlint@v0.4.0` |
+| [`.github/workflows/fvlint.yml`](.github/workflows/fvlint.yml) | The CI job: checkout, then `uses: tm-treehouse/fvlint@v0.5.0` |
 
 ## The design
 
@@ -50,15 +50,15 @@ Install the [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build)
 (Yosys, SymbiYosys, solvers and the yosys-slang SystemVerilog frontend), then:
 
 ```
-pip install git+https://github.com/tm-treehouse/fvlint@v0.4.0
+pip install git+https://github.com/tm-treehouse/fvlint@v0.5.0
 fvlint --config fvlint.toml -v
 ```
 
 ```
 === fvlint: demo
-fvlint 0.4.0: top demo_top, 62 cells, 11 checks; reset: rst_n (active 0, held 1 cycle(s)); yosys 0.71 (native), solver=yices, abc=yes
+fvlint 0.5.0: top demo_top, 62 cells, 11 checks; reset: rst_n (active 0, held 1 cycle(s)); yosys 0.71 (native), solver=yices, abc=yes
 
-9.2s, 14 solver jobs, engine pdr; results in fvlint_out/demo/
+9.1s, 14 solver jobs, engine pdr; results in fvlint_out/demo/
 fvlint: 11 checks: 1 info, 8 proven, 2 waived
 
 INFO    fsm_summary:u_framer.st             rtl/demo_top.sv:61  4 reachable states from reset 3'b000
